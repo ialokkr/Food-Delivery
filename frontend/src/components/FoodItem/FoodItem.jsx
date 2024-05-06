@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import { assets } from "../../assets/assets";
 import "./FoodItem.css";
 import { StoreContext } from "../../context/StoreContext";
@@ -43,6 +44,16 @@ const FoodItem = ({ id, name, price, description, image }) => {
       </div>
     </div>
   );
+};
+
+// Add prop validation for the "id" prop
+FoodItem.propTypes = {
+  // eslint-disable-next-line no-undef
+  id: PropTypes.string.isRequired, // Define id prop type as string and mark it as required
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default FoodItem;
